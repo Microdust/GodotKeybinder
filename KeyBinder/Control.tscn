@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MenuHandler.cs" type="Script" id=1]
+[ext_resource path="res://Hamster.jpg" type="Texture" id=2]
+[ext_resource path="res://Example.cs" type="Script" id=3]
+
+[node name="MainNode" type="Node" index="0"]
+
+[node name="Menu" type="Control" parent="." index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 2.0
+margin_right = -1.0
+margin_bottom = 2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Hint", "Margin" ]
+
+[node name="Change" type="Button" parent="Menu" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -150.0
+margin_right = 69.0
+margin_bottom = -130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Change"
+flat = false
+align = 1
+
+[node name="RebindPanel" type="Panel" parent="Menu" index="1"]
+
+editor/display_folded = true
+modulate = Color( 1, 0.429688, 0.884155, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -122.0
+margin_right = 120.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/RebindPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="Hamster" type="Sprite" parent="." index="1"]
+
+position = Vector2( 347.615, 299.341 )
+scale = Vector2( 0.107398, 0.125821 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+

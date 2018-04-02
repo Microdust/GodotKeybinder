@@ -1,0 +1,69 @@
+﻿[
+  {
+    "Action": "VerticalMovement",
+    "Id": "0",
+    "KeyboardBinding": [
+      {
+        "KeyboardKey": "W",
+        "AxisContribution": "-1",
+        "Name": "Forward"
+      },
+      {
+        "KeyboardKey": "S",
+        "AxisContribution": "1",
+        "Name": "Back"
+      }
+    ],
+    "GamePadBinding": [
+      {
+        "Analog": "true",
+        "GamePadKey": "AnalogLy",
+        "AxisContribution": "1",
+        "Name": "Back"
+      }
+    ]
+  },
+  {
+    "Action": "HorizontalMovement",
+    "Id": "1",
+    "KeyboardBinding": [
+      {
+        "KeyboardKey": "A",
+        "AxisContribution": "-1",
+        "Name": "Left"
+      },
+      {
+        "KeyboardKey": "D",
+        "AxisContribution": "1",
+        "Name": "Right"
+      }
+    ],
+    "GamePadBinding": [
+      {
+        "Analog": "true",
+        "GamePadKey": "AnalogLx",
+        "AxisContribution": "1",
+        "Name": "Horizontal"
+      }
+    ]
+  },
+  {
+    "Action": "Attack",
+    "Id": "2",
+    "MouseBinding": [
+      {
+        "MouseKey": "Right",
+        "AxisContribution": "1",
+        "Name": "Attack"
+      }
+    ],
+    "GamePadBinding": [
+      {
+        "Analog": "false",
+        "GamePadKey": "R2",
+        "AxisContribution": "1",
+        "Name": "Attack"
+      }
+    ]
+  }
+]
