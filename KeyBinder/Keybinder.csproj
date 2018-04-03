@@ -61,7 +61,6 @@
     <Compile Include="InputController\Devices\GamePadDevice.cs" />
     <Compile Include="InputController\Devices\KeyboardDevice.cs" />
     <Compile Include="InputController\Devices\MouseDevice.cs" />
-    <Compile Include="InputController\GamePadState.cs" />
     <Compile Include="InputController\InputHandlers\PlayerFullDesktop.cs" />
     <Compile Include="InputController\InputHandlers\PlayerGamePad.cs" />
     <Compile Include="InputController\InputHandlers\PlayerInput.cs" />
