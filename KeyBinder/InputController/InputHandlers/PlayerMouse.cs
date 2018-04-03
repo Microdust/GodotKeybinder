@@ -16,7 +16,7 @@ namespace test1.InputController
 
         public override bool GetAction(int actionId)
         {
-            return AllActions[actionId].State != 0 ? true : false;
+            return AllActions[actionId].IsTriggered;
         }
 
         public override Vector2 GetAxis2D(int xAxis, int yAxis)
