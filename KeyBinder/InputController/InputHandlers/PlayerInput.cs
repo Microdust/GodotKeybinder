@@ -23,7 +23,6 @@ namespace test1.InputController
         public override void _Process(float delta)
         {
             device.Tick();
-            base._Process(delta);
         }
 
         public abstract Vector2 GetAxisSigned2D(int xAxis, int yAxis);
