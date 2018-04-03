@@ -20,7 +20,7 @@ public class Example : Sprite
     public override void _Process(float delta)
     {
 
-          Position += player.GetAxis2D(ConstActions.HorizontalMovement, ConstActions.VerticalMovement);
+        Position += player.GetAxis2D(ConstActions.HorizontalMovement, ConstActions.VerticalMovement);
 
         if (player.GetAction(ConstActions.Attack))
         {
