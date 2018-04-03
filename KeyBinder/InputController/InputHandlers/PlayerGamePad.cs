@@ -16,7 +16,7 @@ namespace test1.InputController
         private Vector2 vectorZero = new Vector2(0f, 0f);
         private Vector2 vectorTemp = new Vector2(0f, 0f);
 
-        public PlayerGamePad(ActionInput[] Actions) : base(new GamePadDevice(Actions), Actions)
+        public PlayerGamePad(ActionInput[] actions) : base(new GamePadDevice(actions), actions)
         {
         }
 
@@ -37,7 +37,6 @@ namespace test1.InputController
         {
             vectorTemp.x = 0f;
             vectorTemp.y = 0f;
-
 
             if (Mathf.Abs(AllActions[xAxis].State) > DEADZONE)
                 vectorTemp.x = AllActions[xAxis].State;

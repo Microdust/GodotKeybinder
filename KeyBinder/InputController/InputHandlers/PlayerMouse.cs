@@ -10,7 +10,7 @@ namespace test1.InputController
 {
     internal class PlayerMouse : PlayerInput
     {
-        public PlayerMouse(ActionInput[] Actions) : base(new MouseDevice(Actions), Actions)
+        public PlayerMouse(ActionInput[] actions) : base(new MouseDevice(actions), actions)
         {
         }
 

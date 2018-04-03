@@ -13,10 +13,10 @@ namespace test1.InputController
         protected ActionInput[] AllActions;
         private BaseDevice device;
 
-        public PlayerInput(BaseDevice device, ActionInput[] Actions)
+        public PlayerInput(BaseDevice device, ActionInput[] actions)
         {
             this.device = device;
-            this.AllActions = Actions;
+            this.AllActions = actions;
         }
 
 

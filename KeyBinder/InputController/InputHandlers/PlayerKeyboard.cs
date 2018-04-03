@@ -10,7 +10,7 @@ namespace test1.InputController
 {
     internal class PlayerKeyboard : PlayerInput
     {
-        public PlayerKeyboard(ActionInput[] Actions) : base (new KeyboardDevice(Actions), Actions)
+        public PlayerKeyboard(ActionInput[] actions) : base (new KeyboardDevice(actions), actions)
         {
 
         }
@@ -27,7 +27,7 @@ namespace test1.InputController
 
         public override bool GetAction(int actionId)
         {
-            return AllActions[actionId].State != 0 ? true : false;
+            return AllActions[actionId].IsTriggered;
         }
     }
 }

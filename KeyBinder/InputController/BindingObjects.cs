@@ -45,11 +45,11 @@ namespace test1.InputController
         public int Key;
         public string Name;
 
-        public BindingProperties(int KeyToBind, float AxisContribution, string Name)
+        public BindingProperties(int keyToBind, float AxisContribution, string name)
         {
-            this.Key = KeyToBind;
+            this.Key = keyToBind;
             this.AxisContribution = AxisContribution;
-            this.Name = Name;
+            this.Name = name;
         }
     }
 

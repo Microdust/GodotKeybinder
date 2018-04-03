@@ -11,15 +11,15 @@ namespace test1
 {
     public class MenuHandler : Control
     {
-        private Panel RebindPanel;
-        private ActionInput[] AllActions;
+        private Panel rebindPanel;
+        private ActionInput[] allActions;
 
         public override void _Ready()
         {
-            AllActions = InputManager.GetActions();
+            allActions = InputManager.GetActions();
             GetChild(0).Connect("pressed", this, "ChangeKey");
-            RebindPanel = (Panel)GetChild(1);
-            RebindPanel.Visible = false;
+            rebindPanel = (Panel)GetChild(1);
+            rebindPanel.Visible = false;
 
             SetupRebindPanel();
 
@@ -36,20 +36,20 @@ namespace test1
             Container.AddConstantOverride("hseparation", 25);
             Container.AddConstantOverride("vseparation", 5);
 
-            RebindPanel.GetChild(0).AddChild(Container);
+            rebindPanel.GetChild(0).AddChild(Container);
 
             Container.AddChild(new Label() { Text = "Action"});
             Container.AddChild(new Label() { Text = "Keyboard" });
 
 
-            for (int i = 0; i < AllActions.Length; i++)
+            for (int i = 0; i < allActions.Length; i++)
             {
-                if (AllActions[i].KeyboardBinding != null)
+                if (allActions[i].KeyboardBinding != null)
                 {
-                    for (int j = 0; j < AllActions[i].KeyboardBinding.Length; j++)
+                    for (int j = 0; j < allActions[i].KeyboardBinding.Length; j++)
                     {
-                        Container.AddChild(new Label() { Text = AllActions[i].KeyboardBinding[j].Name });
-                        Container.AddChild(new Button() { Text = ((KeyList)(AllActions[i].KeyboardBinding[j].Key)).ToString()  });
+                        Container.AddChild(new Label() { Text = allActions[i].KeyboardBinding[j].Name });
+                        Container.AddChild(new Button() { Text = ((KeyList)(allActions[i].KeyboardBinding[j].Key)).ToString()  });
                     }
                 }
             }
@@ -57,16 +57,14 @@ namespace test1
 
         private void ChangeKey()
         {
-            if (!RebindPanel.Visible)
+            if (!rebindPanel.Visible)
             {
-                RebindPanel.Visible = true;
+                rebindPanel.Visible = true;
             }
             else
             {
-                RebindPanel.Visible = false;
+                rebindPanel.Visible = false;
             }
-            
-           //InputManager.RebindKey(DeviceType.Keyboard, 0, 0, (int)KeyList.Y);
         }
 
 

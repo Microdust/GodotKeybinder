@@ -11,28 +11,28 @@ namespace test1.InputController.Devices
     {
         private MouseBinding[] currentBinding;
 
-        public MouseDevice(ActionInput[] AllActions)
+        public MouseDevice(ActionInput[] allActions)
         {
             List<ActionInput> tempAction = new List<ActionInput>();
 
-            for (int i = deviceActions.Length - 1; i >= 0; i--)
+            for (int i = DeviceActions.Length - 1; i >= 0; i--)
             {
-                if (deviceActions[i].MouseBinding != null)
+                if (DeviceActions[i].MouseBinding != null)
                 {
-                    tempAction.Add(deviceActions[i]);
+                    tempAction.Add(DeviceActions[i]);
                 }
             }
 
-            deviceActions = tempAction.ToArray();
+            DeviceActions = tempAction.ToArray();
         }
 
         public override void Tick()
         {
-            for (int i = deviceActions.Length - 1; i >= 0; i--)
+            for (int i = DeviceActions.Length - 1; i >= 0; i--)
             {
-                ref bool IsTriggered = ref deviceActions[i].IsTriggered;
+                ref bool IsTriggered = ref DeviceActions[i].IsTriggered;
                 IsTriggered = false;
-                currentBinding = deviceActions[i].MouseBinding;
+                currentBinding = DeviceActions[i].MouseBinding;
 
                 for (int j = currentBinding.Length - 1; j >= 0; j--)
                 {

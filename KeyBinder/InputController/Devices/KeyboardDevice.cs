@@ -8,33 +8,33 @@ namespace test1.InputController.Devices
     {
         private KeyboardBinding[] currentBinding;
         
-        public KeyboardDevice(ActionInput[] AllActions)
+        public KeyboardDevice(ActionInput[] allActions)
         {
             List<ActionInput> tempAction = new List<ActionInput>();
 
-            for (int i = AllActions.Length - 1; i >= 0; i--)
+            for (int i = allActions.Length - 1; i >= 0; i--)
             {
-                if (AllActions[i].KeyboardBinding != null)
+                if (allActions[i].KeyboardBinding != null)
                 {
-                    tempAction.Add(AllActions[i]);
+                    tempAction.Add(allActions[i]);
                 }
                 
             }
 
-            deviceActions = tempAction.ToArray();
+            DeviceActions = tempAction.ToArray();
         }
 
         public override void Tick()
         {
-            for (int i = deviceActions.Length - 1; i >= 0; i--)
+            for (int i = DeviceActions.Length - 1; i >= 0; i--)
             {
-                ref bool IsTriggered = ref deviceActions[i].IsTriggered;
-                ref float State = ref deviceActions[i].State;
+                ref bool IsTriggered = ref DeviceActions[i].IsTriggered;
+                ref float State = ref DeviceActions[i].State;
 
                 IsTriggered = false;
                 State = 0;
 
-                currentBinding = deviceActions[i].KeyboardBinding;
+                currentBinding = DeviceActions[i].KeyboardBinding;
 
                 for (int j = currentBinding.Length - 1; j >= 0; j--)
                 {

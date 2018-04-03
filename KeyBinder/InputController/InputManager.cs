@@ -5,53 +5,52 @@ namespace test1.InputController
 {
     internal static class InputManager
     {
-        private static readonly ActionInput[] AllActions;
-        private static readonly List<PlayerInput> Players = new List<PlayerInput>();
+        private static readonly ActionInput[] allActions;
+        private static readonly List<PlayerInput> players = new List<PlayerInput>();
 
         static InputManager()
         {
             using (JsonLoader loader = new JsonLoader())
             {
-                AllActions = loader.GetBindingActions();       
+                allActions = loader.GetBindingActions();       
             }
         }
 
         public static void Initialize()
         {
-            if (Input.GetJoyName(0) != string.Empty)
+            if (!string.IsNullOrWhiteSpace(Input.GetJoyName(0)))
             {
-                Players.Add(new PlayerGamePad(AllActions));
+                players.Add(new PlayerGamePad(allActions));
             }
             else
             {
-                Players.Add(new PlayerFullDesktop(AllActions));
+                players.Add(new PlayerFullDesktop(allActions));
             }
         }
 
         public static PlayerInput GetPlayer(int index)
         {
-            return Players[index];
+            return players[index];
         }
 
         public static ActionInput[] GetActions()
         {
-            return AllActions;
+            return allActions;
         }
 
         public static void RebindKey(DeviceType type, int action, int keyIndex, int newKey)
         {
-            GD.Print("RebindKey");
             switch (type)
             {
                 case DeviceType.Keyboard:
-                    AllActions[action].KeyboardBinding[keyIndex].Key = newKey;
+                    allActions[action].KeyboardBinding[keyIndex].Key = newKey;
                     break;
                 case DeviceType.GamePad:
-                    GD.Print(AllActions[action].GamePadBinding[keyIndex].Key);
-                    AllActions[action].GamePadBinding[keyIndex].Key = newKey;
+                    GD.Print(allActions[action].GamePadBinding[keyIndex].Key);
+                    allActions[action].GamePadBinding[keyIndex].Key = newKey;
                     break;
                 case DeviceType.Mouse:
-                    AllActions[action].MouseBinding[keyIndex].Key = newKey;
+                    allActions[action].MouseBinding[keyIndex].Key = newKey;
                     break;
             }
 

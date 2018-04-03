@@ -10,14 +10,14 @@ namespace test1.InputController.Devices
         private GamePadBinding[] currentBinding;
         private ActionInput[] buttonActions;
 
-        public GamePadDevice(ActionInput[] AllActions)
+        public GamePadDevice(ActionInput[] allActions)
         {
             List<ActionInput> tempAction = new List<ActionInput>();
             List<ActionInput> tempButtonAction = new List<ActionInput>();
 
-            for (int i = AllActions.Length - 1; i >= 0; i--)
+            for (int i = allActions.Length - 1; i >= 0; i--)
             {
-                currentBinding = AllActions[i].GamePadBinding;
+                currentBinding = allActions[i].GamePadBinding;
 
                 if (currentBinding != null)
                 {
@@ -25,25 +25,25 @@ namespace test1.InputController.Devices
                     {
                         if (currentBinding[j].Analog)
                         {
-                            tempAction.Add(AllActions[i]);
+                            tempAction.Add(allActions[i]);
                         }
                         else
                         {
-                            tempButtonAction.Add(AllActions[i]);
+                            tempButtonAction.Add(allActions[i]);
                         }
                     }                       
                 }
             }
             buttonActions = tempButtonAction.ToArray();
-            deviceActions = tempAction.ToArray();
+            DeviceActions = tempAction.ToArray();
         }
 
         public override void Tick()
         {
-            for (int i = deviceActions.Length - 1; i >= 0; i--)
+            for (int i = DeviceActions.Length - 1; i >= 0; i--)
             {
-                ref float state = ref deviceActions[i].State;
-                currentBinding = deviceActions[i].GamePadBinding;
+                ref float state = ref DeviceActions[i].State;
+                currentBinding = DeviceActions[i].GamePadBinding;
 
                 for (int j = currentBinding.Length - 1; j >= 0; j--)
                 {               

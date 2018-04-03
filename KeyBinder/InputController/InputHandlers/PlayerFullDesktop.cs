@@ -10,7 +10,7 @@ namespace test1.InputController
 {
     internal class PlayerFullDesktop : PlayerInput
     {
-        public PlayerFullDesktop(ActionInput[] Actions) : base(new FullDesktopDevice(Actions), Actions)
+        public PlayerFullDesktop(ActionInput[] actions) : base(new FullDesktopDevice(actions), actions)
         {
         }
 

@@ -8,7 +8,7 @@ namespace test1.InputController.Devices
 {
     internal abstract class BaseDevice
     {
-        protected ActionInput[] deviceActions;
+        protected ActionInput[] DeviceActions;
 
         public BaseDevice()
         {
